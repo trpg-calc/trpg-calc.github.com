@@ -102,7 +102,7 @@ const calculateIterations = (bd, mm, lm, cm, cd, it) => {
 }
 
 button.onclick = () => {
-
+  resultEl.textContent = '';
   baseDamage.value.split(';').forEach((bd, i) => {
     const result = calculateIterations(
       bd,
@@ -112,7 +112,7 @@ button.onclick = () => {
       critDamage.value.split(';')[i],
       Number(numberOfIterations.value),
     );
-    resultEl.textContent += JSON.stringify(result) + '\n';
+    resultEl.textContent += `${bd}: ${JSON.stringify(result)}`;
   });
 }
 
